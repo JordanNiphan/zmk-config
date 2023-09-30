@@ -1,11 +1,11 @@
 file_format: "1"
-id: a_dux
-name: A. Dux
+id: slaet
+name: Slaet The Bard
 type: shield
-url: https://github.com/tapioki/cephalopoda/tree/main/Architeuthis%20dux
-requires: [pro_micro]
+url: https://github.com/echo/echo
+requires: [waveshare_xiao_rp2040]
 features:
   - keys
 siblings:
-  - a_dux_left
-  - a_dux_right
+  - slaet_left
+  - slaet_right
