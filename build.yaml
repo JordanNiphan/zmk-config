@@ -13,5 +13,8 @@
 #
 ---
 include:
-  - board: waveshare_xiao_rp2040
-    shield: slaet
+  - board: nice_nano_v2
+    shield: corne_right
+  - board: nice_nano_v2
+    shield: corne_left
+
