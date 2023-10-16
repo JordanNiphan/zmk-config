@@ -18,20 +18,16 @@ keypos_def/keypos_36keys.h
   ╰───────╮ 30  31  32 │ 33  34  35 ╭───────╯ ╰───────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────╯
           ╰────────────┴────────────╯                 ╰─────────────┴─────────────╯             */
 
-#define COMBO(name, kp, pos) \
-combo_name {               \
-    timeout-ms    = <30>;    \
-    bindings      = <kp>;    \
-    key-positions = <pos>;   \
-};
-
 / {
     combos {
         compatible = "zmk,combos";
-        COMBO(backspace, &kp BSPC, 16 17)
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
     };
 };
-
 
 
 / {
