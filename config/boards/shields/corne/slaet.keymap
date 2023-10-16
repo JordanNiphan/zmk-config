@@ -72,11 +72,11 @@
                 NAVLAYER {
 
                         bindings = <
-   &kp TAB   &kp Q &kp PG_DN    &kp UP   &kp PG_UP     &kp G   &kp J &kp L  &kp U     &kp Y    &kp SEMI     &kp BSPC
+   &kp TAB   &kp Q &kp PG_DN    &kp UP   &kp PG_UP     &kp G   &kp J &kp L  &kp U     &kp Y    &kp SEMI      &bt BT_CL
    &kp LCTRL &kp A &kp LEFT &kp DOWN &kp RIGHT &kp D   &kp H &kp N  &kp E     &trans   &kp O        &kp SQT
    &kp LSHFT &kp Z &kp X    &kp C    &kp V     &kp B   &kp K &kp M  &kp COMMA &kp DOT  &kp FSLH     &kp ESC
 
-                  &kp LCTRL &sk LSHIFT &kp SPACE   &kp RET &kp SPACE &kp RALT
+                  &kp LCTRL &sk LSHIFT &kp SPACE   &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2
                   
                         >;
                 };
