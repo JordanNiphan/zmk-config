@@ -16,36 +16,22 @@
 //  ╰───────╮ 30  31 32  │ │ 33  34  35 ╭───────╯
 //          ╰────────────╯ ╰────────────╯
 
+#define COMBO(name, kp, pos) \
+combo_##name {               \
+    timeout-ms    = <30>;    \
+    bindings      = <kp>;    \
+    key-positions = <pos>;   \
+};
+
 / {
     combos {
         compatible = "zmk,combos";
-        combo_backspace {
-            timeout-ms = <50>;
-            key-positions = <16 17>;
-            bindings = <&kp BSPC>;
-        };
-        combo_enter {
-            timeout-ms = <50>;
-            key-positions = <26 27>;
-            bindings = <&kp ENT>;
-        };
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <3 4>;
-            bindings = <&kp TAB>;
-        };
-        combo_qoute {
-            timeout-ms = <50>;
-            key-positions = <3 4>;
-            bindings = <&kp SQT>;
-        };
-        combo_del {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp DEL>;
-        };
+        COMBO(backspace, &tog BSPC, 16 17)
     };
 };
+
+
+
 / {
         keymap {
                 compatible = "zmk,keymap";
