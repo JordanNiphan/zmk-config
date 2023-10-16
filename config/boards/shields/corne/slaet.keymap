@@ -72,7 +72,7 @@
                 NAVLAYER {
 
                         bindings = <
-   &kp TAB   &kp Q &kp PG_DN    &kp UP   &kp PG_UP     &kp G   &kp J &kp L  &kp U     &kp Y    &kp SEMI      &bt BT_CL
+   &kp TAB   &kp Q &kp PG_DN    &kp UP   &kp PG_UP     &kp G   &kp J &kp L  &kp U     &kp Y    &kp SEMI      &bt BT_CLR
    &kp LCTRL &kp A &kp LEFT &kp DOWN &kp RIGHT &kp D   &kp H &kp N  &kp E     &trans   &kp O        &kp SQT
    &kp LSHFT &kp Z &kp X    &kp C    &kp V     &kp B   &kp K &kp M  &kp COMMA &kp DOT  &kp FSLH     &kp ESC
 
