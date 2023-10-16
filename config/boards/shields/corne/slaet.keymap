@@ -52,6 +52,7 @@
    &kp TAB   &kp Q &kp W &kp F &kp P &kp G   &kp J &kp L  &kp U     &kp Y   &kp SEMI     &kp BSPC
    &kp LCTRL &kp A &kp R &kp S &kp T &kp D   &kp H &kp N  &kp E     &kp I   &kp O        &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp K &kp M  &kp COMMA &kp DOT &kp FSLH     &kp ESC
+
                   &kp LCTRL &sk LSHIFT &lt NUMLAYER SPACE   &kp RET &kp SPACE &kp RALT
                   
                         >;
@@ -60,10 +61,22 @@
                 NUMLAYER {
 
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp F &kp P &kp G   &kp J &kp 7  &kp 8     &kp 9   &kp SEMI     &kp BSPC
-   &kp LCTRL &kp A &kp R &kp S &kp T &kp D   &kp H &kp 4  &kp 5     &kp 6   &kp O        &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp K &kp 1  &kp 2     &kp 3   &kp FSLH     &kp ESC
-                  &kp LGUI &sk LSHIFT &kp SPACE   &kp 0 &kp DOT &kp RALT
+   &kp TAB   &kp Q &kp W &kp F &kp P &kp G   &kp J &kp N7  &kp N8     &kp N9   &kp SEMI     &kp BSPC
+   &kp LCTRL &kp A &kp R &kp S &kp L &kp D   &kp H &kp N4  &kp N5     &kp N6   &kp O        &kp SQT
+   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp K &kp N1  &kp N2     &kp N3   &kp FSLH     &kp ESC
+
+                  &kp LGUI &sk LSHIFT &trans   &kp N0 &kp DOT &kp RALT
+                  
+                        >;
+                };
+                NAVLAYER {
+
+                        bindings = <
+   &kp TAB   &kp Q &kp PG_DN    &kp UP   &kp PG_UP     &kp G   &kp J &kp L  &kp U     &kp Y    &kp SEMI     &kp BSPC
+   &kp LCTRL &kp A &kp LEFT &kp DOWN &kp RIGHT &kp D   &kp H &kp N  &kp E     &trans   &kp O        &kp SQT
+   &kp LSHFT &kp Z &kp X    &kp C    &kp V     &kp B   &kp K &kp M  &kp COMMA &kp DOT  &kp FSLH     &kp ESC
+
+                  &kp LCTRL &sk LSHIFT &kp SPACE   &kp RET &kp SPACE &kp RALT
                   
                         >;
                 };
