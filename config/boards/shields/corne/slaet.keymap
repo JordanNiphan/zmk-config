@@ -38,21 +38,7 @@
             key-positions = <19 20>;
             bindings = <&kp BSPC>;
         };
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <3 4>;
-            bindings = <&kp TAB>;
-        };
-        combo_quote {
-            timeout-ms = <50>;
-            key-positions = <7 8>;
-            bindings = <&kp SQT>
-        };
-        combo_del {
-            timeout-ms = <50>;
-            key-positions = <15 16>;
-            bindings = <&kp DEL>
-        };                    
+              
     };
 };
 
