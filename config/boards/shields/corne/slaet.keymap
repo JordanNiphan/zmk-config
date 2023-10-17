@@ -3,14 +3,13 @@
  *
  * SPDX-License-Identifier: MIT
  */
-#include <dt-bindings/zmk/mouse.h>
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #define DEFAULT     0
 #define NUMLAYER    1
 #define NAVLAYER    2
-#define MOUSELAYER  3
 
 /*                                      42 KEY MATRIX / LAYOUT MAPPING
 
@@ -66,7 +65,7 @@
 
                         bindings = <
    &kp TAB   &kp Q &kp W &kp F &kp P &kp G   &kp J &kp L  &kp U     &kp Y   &kp SEMI     &kp BSPC
-   &kp LCTRL &kp A &kp R &kp S &kp T &kp D   &kp H &kp N  &kp E     &lt NAVLAYER I   &lt MOUSELAYER O         &kp SQT
+   &kp LCTRL &kp A &kp R &kp S &kp T &kp D   &kp H &kp N  &kp E     &lt NAVLAYER I   &kp O        &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp K &kp M  &kp COMMA &kp DOT &kp FSLH     &kp ESC
 
                   &kp LCTRL &sk LSHIFT &lt NUMLAYER SPACE   &kp RET &kp SPACE &kp RALT
@@ -93,17 +92,6 @@
    &kp LSHFT &kp Z &kp X        &kp C    &kp V         &kp B       &kp K &kp M  &kp COMMA &kp DOT  &kp FSLH      &kp ESC
 
                   &kp LCTRL &sk LSHIFT &kp SPACE   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2
-                  
-                        >;
-                };
-                MOUSELAYER {
-
-                        bindings = <
-  &trans  &trans  &trans  &mmv MOVE_UP    &trans   &trans            &trans  &trans  &trans  &trans  &trans  &trans
-  &trans  &trans  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-  &trans  &trans  &trans            &trans          &trans           &trans            &trans  &trans  &trans  &trans  &trans  &trans
-
-                                       &trans  &trans  &mkp LCLK       &mkp RCLK  &trans  &trans
                   
                         >;
                 };
