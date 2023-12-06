@@ -78,7 +78,7 @@
    &kp LC(C)   &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &lt NAVLAYER I      &kp O        &kp SQT
    &kp LC(V)  &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT             &kp FSLH     &kp ESC
 
-                  &kp LCTRL &sk LSHIFT &lt NUMLAYER SPACE   &sk RSHIFT &kp RCTRL &kp RALT
+                  &lt MOUSELAYER LCTRL &sk LSHIFT &lt NUMLAYER SPACE   &sk RSHIFT &kp RCTRL &kp RALT
                   
                         >;
                 };
@@ -100,6 +100,16 @@
    &kp TAB   &kp Q &kp PG_DN    &kp UP   &kp PG_UP     &kp G       &kp J &kp L  &kp U     &kp Y    &kp SEMI      &bt BT_CLR
    &kp LCTRL &kp A &kp LEFT     &kp DOWN &kp RIGHT     &kp D       &kp H &kp N  &kp E     &trans   &kp O         &kp SQT
    &kp LSHFT &kp Z &kp X        &kp C    &kp V         &kp B       &kp K &kp M  &kp COMMA &kp DOT  &kp FSLH      &kp ESC
+
+                  &kp LCTRL &sk LSHIFT &kp SPACE   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2
+                  
+                        >;
+                MOUSELAYER {
+
+                        bindings = <
+   &trans   &trans &trans        &trans     &trans      &trans      &trans   &trans     &trans    &trans   &trans     &trans 
+   &trans   &trans &mkp RCLK     &mkp LCLK  &trans      &trans      &trans   &trans     &trans    &trans   &trans     &trans 
+   &trans   &trans &trans        &trans     &trans      &trans      &trans   &trans     &trans    &trans   &trans     &trans 
 
                   &kp LCTRL &sk LSHIFT &kp SPACE   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2
                   
