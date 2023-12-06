@@ -67,7 +67,7 @@
         };
         combo_rclk {
             timeout-ms = <50>;
-            key-positions = <26 28>;
+            key-positions = <26 27>;
             bindings = <&mkp RCLK>;
         };               
     };
