@@ -62,8 +62,13 @@
         };               
         combo_lclk {
             timeout-ms = <50>;
-            key-positions = <28 29>;
+            key-positions = <27 28>;
             bindings = <&mkp LCLK>;
+        };
+        combo_rclk {
+            timeout-ms = <50>;
+            key-positions = <26 28>;
+            bindings = <&mkp RCLK>;
         };               
     };
 };
@@ -80,7 +85,7 @@
    &kp LC(C)   &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &lt NAVLAYER I      &kp O        &kp SQT
    &kp LC(V)  &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT             &kp FSLH     &kp ESC
 
-                  &lt MOUSELAYER LCTRL &sk LSHIFT &lt NUMLAYER SPACE   &sk RSHIFT &kp RCTRL &kp RALT
+                  &kp LCTRL &sk LSHIFT &lt NUMLAYER SPACE   &sk RSHIFT &kp RCTRL &kp RALT
                   
                         >;
                 };
