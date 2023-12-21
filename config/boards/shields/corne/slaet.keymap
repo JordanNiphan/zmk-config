@@ -69,7 +69,12 @@
             timeout-ms = <50>;
             key-positions = <26 27>;
             bindings = <&mkp RCLK>;
-        };               
+        };
+        combo_righthold {
+            timeout-ms = <50>;
+            key-positions = <1 2 3>;
+            bindings = <&mkt RCLK>;
+        };                     
     };
 };
 
@@ -122,6 +127,6 @@
                    &trans &trans &trans  &trans &trans &trans
                   
                         >;
-                };
+                g};
         };
 };
