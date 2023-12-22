@@ -133,6 +133,7 @@
                    &trans &trans &trans  &trans &trans &trans
                   
                         >;
+                };
                 BARDLAYER {
 
                         bindings = <
