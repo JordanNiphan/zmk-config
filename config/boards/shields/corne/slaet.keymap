@@ -70,11 +70,16 @@
             key-positions = <26 27>;
             bindings = <&mkp RCLK>;
         };
-        combo_righthold {
+        combo_holda {
             timeout-ms = <50>;
             key-positions = <1 2 3>;
-            bindings = <&mkt RCLK>;
-        };                     
+            bindings = <&kt A>;
+        };
+        combo_holdw {
+            timeout-ms = <50>;
+            key-positions = <2 3 4>;
+            bindings = <&kt W>;
+        };                          
     };
 };
 
