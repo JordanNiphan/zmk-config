@@ -12,6 +12,7 @@
 #define NUMLAYER     1
 #define NAVLAYER     2
 #define MOUSELAYER   3
+#define BARDLAYER    4
 
 /*                                      42 KEY MATRIX / LAYOUT MAPPING
 
@@ -55,31 +56,26 @@
             key-positions = <15 16>;
             bindings = <&kp DEL>;
         };
-        combo_lalt {
-            timeout-ms = <50>;
-            key-positions = <13 14>;
-            bindings = <&kp LALT>;
-        };               
         combo_lclk {
             timeout-ms = <50>;
-            key-positions = <27 28>;
+            key-positions = <1 2>;
             bindings = <&mkp LCLK>;
         };
         combo_rclk {
             timeout-ms = <50>;
-            key-positions = <26 27>;
+            key-positions = <0 1>;
             bindings = <&mkp RCLK>;
         };
         combo_holda {
             timeout-ms = <50>;
-            key-positions = <1 2 3>;
+            key-positions = <0 1 2>;
             bindings = <&kt A>;
         };
         combo_holdw {
             timeout-ms = <50>;
             key-positions = <2 3 4>;
             bindings = <&kt W>;
-        };                          
+        };        
     };
 };
 
@@ -123,6 +119,16 @@
                         >;
                 };
                 MOUSELAYER {
+
+                        bindings = <
+   &trans   &trans &trans        &trans     &trans      &trans      &trans   &trans     &trans    &trans   &trans     &trans 
+   &trans   &trans &mkp RCLK     &mkp LCLK  &trans      &trans      &trans   &trans     &trans    &trans   &trans     &trans 
+   &trans   &trans &trans        &trans     &trans      &trans      &trans   &trans     &trans    &trans   &trans     &trans 
+
+                   &trans &trans &trans  &trans &trans &trans
+                  
+                        >;
+                BARDLAYER {
 
                         bindings = <
    &trans   &trans &trans        &trans     &trans      &trans      &trans   &trans     &trans    &trans   &trans     &trans 
