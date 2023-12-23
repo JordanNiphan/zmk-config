@@ -28,9 +28,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings 
-            = <&macro_press &kp F>
+            = <&macro_press &kp F &kp J>
             , <&macro_pause_for_release>
-            , <&macro_release &kp F>;
+            , <&macro_release &kp F &kp J>;
             };
         };
 };
@@ -60,7 +60,7 @@
         combo_quote {
             timeout-ms = <50>;
             key-positions = <7 8>;
-            bindings = <&kp SQT>;
+             bindings = <&kp SQT>;
         };
         combo_bslsh {
             timeout-ms = <50>;
