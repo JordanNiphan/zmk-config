@@ -74,7 +74,7 @@
         combo_holda {
             timeout-ms = <50>;
             key-positions = <0 1 2>;
-            bindings = <&kt A>;
+            bindings = <&kt LC(A)>;
         };
         combo_holdw {
             timeout-ms = <50>;
