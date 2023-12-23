@@ -78,7 +78,7 @@
         };
         combo_holdw {
             timeout-ms = <50>;
-            key-positions = <2 3 4>;
+            key-positions = <1 2 3>;
             bindings = <&kt W>;
         };        
     };
