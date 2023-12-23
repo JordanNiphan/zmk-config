@@ -80,7 +80,12 @@
             timeout-ms = <50>;
             key-positions = <1 2 3>;
             bindings = <&kt W>;
-        };        
+        };
+        combo_pgup {
+            timeout-ms = <50>;
+            key-positions = <1 15>;
+            bindings = <&kp PG_UP>;
+        };                
     };
 };
 
