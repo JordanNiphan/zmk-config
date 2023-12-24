@@ -82,20 +82,15 @@
             key-positions = <1 2>;
             bindings = <&mkp RCLK>;
         };
-        combo_holda {
+        combo_holdaup {
             timeout-ms = <50>;
             key-positions = <0 1 2>;
-            bindings = <&kt LC(A)>;
+            bindings = <&kp F14>;
         };
-        combo_holdw {
+        combo_holdadown {
             timeout-ms = <50>;
             key-positions = <1 2 3>;
-            bindings = <&kt W>;
-        };
-        combo_pgup {
-            timeout-ms = <50>;
-            key-positions = <1 15>;
-            bindings = <&kp PG_UP>;
+            bindings = <&kp F13>;
         };
         combo_togbard {
             timeout-ms = <50>;
