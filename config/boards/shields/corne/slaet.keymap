@@ -12,7 +12,6 @@
 #define NUMLAYER     1
 #define NAVLAYER     2
 #define MOUSELAYER   3
-#define BARDLAYER    4
 
 /*                                      42 KEY MATRIX / LAYOUT MAPPING
 
@@ -61,9 +60,13 @@
             key-positions = <15 16>;
             bindings = <&kp DEL>;
         };
+        combo_rclk {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&mkp RCLK >;
+        };
     };
 };
-
 
 / {
         keymap {
