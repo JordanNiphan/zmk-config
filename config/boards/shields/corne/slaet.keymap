@@ -11,6 +11,7 @@
 #define DEFAULT      0
 #define NUMLAYER     1
 #define NAVLAYER     2
+#define MOUSELAYER   3
 
 /*                                      42 KEY MATRIX / LAYOUT MAPPING
 
@@ -105,5 +106,17 @@
                   
                         >;
                 };
+                MOUSELAYER {
+
+                        bindings = <
+   &trans   &trans &trans        &trans     &trans      &trans      &trans   &trans     &trans    &trans   &trans     &trans 
+   &trans   &trans &mkp RCLK     &mkp LCLK  &trans      &trans      &trans   &trans     &trans    &trans   &trans     &trans 
+   &trans   &trans &trans        &trans     &trans      &trans      &trans   &trans     &trans    &trans   &trans     &trans 
+
+                   &trans &trans &trans  &trans &trans &trans
+                  
+                        >;
+                };
+
         };
 };
