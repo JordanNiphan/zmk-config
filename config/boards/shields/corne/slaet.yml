@@ -4,11 +4,10 @@ name: Slaet
 type: shield
 url: 
 requires: [pro_micro]
-exposes: [i2c_oled]
+
 features:
   - keys
-  - display
-  - underglow
+
 siblings:
   - slaet_left
   - slaet_right
