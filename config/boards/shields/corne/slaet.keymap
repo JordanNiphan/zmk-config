@@ -78,7 +78,7 @@
    &kp F14  &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &lt NAVLAYER I      &kp O        &kp SQT
    &kp F15  &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT             &kp FSLH     &kp ESC
 
-                  &kp LCTRL &sk LSHIFT &lt NUMLAYER SPACE   &sk RSHIFT &kp RCTRL &kp RALT
+                  &kp LCTRL &mkp RCLK &lt NUMLAYER SPACE   &sk RSHIFT &kp RCTRL &kp RALT
                   
                         >;
                 };
