@@ -12,6 +12,7 @@
 #define NUMLAYER     1
 #define NAVLAYER     2
 #define MOUSELAYER   3
+#define QWERTY       4
 
 /*                                      42 KEY MATRIX / LAYOUT MAPPING
 
@@ -29,6 +30,16 @@
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
+        };
+        combo_default {
+            timeout-ms = <50>;
+            key-positions = <0 17 29>;
+            bindings = <&to 0>;
+        };
+        combo_qwerty {
+            timeout-ms = <50>;
+            key-positions = <0 12 24>;
+            bindings = <&to 4>;
         };
         combo_ent {
             timeout-ms = <50>;
@@ -112,6 +123,17 @@
    &trans   &trans &trans        &trans     &trans      &trans      &trans   &trans     &trans    &trans   &trans     &trans 
 
                    &trans &trans &trans  &trans &trans &trans
+                  
+                        >;
+                };
+                QWERTY {
+
+                        bindings = <
+   &kp F13  &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O               &kp P     &kp LC(S)
+   &kp F14  &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &lt NAVLAYER L      &kp SEMI        &kp SQT
+   &kp F15  &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT             &kp FSLH     &kp ESC
+
+                  &kp LCTRL &mkp RCLK &lt NUMLAYER SPACE   &sk RSHIFT &kp RCTRL &kp RALT
                   
                         >;
                 };
