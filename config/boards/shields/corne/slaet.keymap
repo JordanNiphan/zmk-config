@@ -33,7 +33,7 @@
         };
         combo_default {
             timeout-ms = <50>;
-            key-positions = <0 17 29>;
+            key-positions = < 17 29>;
             bindings = <&to 0>;
         };
         combo_qwerty {
@@ -85,9 +85,9 @@
                 default_layer {
 
                         bindings = <
-   &kp F13  &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y               &kp SEMI     &kp LC(S)
-   &kp F14  &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &lt NAVLAYER I      &kp O        &kp SQT
-   &kp F15  &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT             &kp FSLH     &kp ESC
+   &kp SPACE  &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y               &kp SEMI     &kp LC(S)
+   &kp F14    &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &lt NAVLAYER I      &kp O        &kp SQT
+   &kp F15    &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT             &kp FSLH     &kp ESC
 
                   &kp LCTRL &mkp RCLK &lt NUMLAYER SPACE   &sk RSHIFT &kp RCTRL &kp RALT
                   
