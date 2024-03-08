@@ -74,13 +74,13 @@
         combo_rclk {
             timeout-ms = <50>;
             key-positions = <2 3>;
-            bindings = <&mkp RCLK >;
+            bindings = <&mkp RCLK>;
         };
     };
     behaviors {
         nback: n_backspace {
             compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <19>;
+            #binding-cells = <0>;
             bindings = <&kp n>, <&kp BSPC>;
             mods = <(MOD_LCTL)>;
         };
