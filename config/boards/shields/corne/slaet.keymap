@@ -29,7 +29,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N>, <&kp BSPC>;
-            mods = <(MOD_LCTL)>;
+            mods = <(MOD_LCTL|MOD_RALT)>;
         };
     };
 
