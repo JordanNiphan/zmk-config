@@ -40,16 +40,6 @@
             key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
-        combo_default {
-            timeout-ms = <50>;
-            key-positions = < 17 29>;
-            bindings = <&to 0>;
-        };
-        combo_qwerty {
-            timeout-ms = <50>;
-            key-positions = <0 12 24>;
-            bindings = <&to 4>;
-        };
         combo_ent {
             timeout-ms = <50>;
             key-positions = <31 32>;
@@ -68,22 +58,22 @@
         combo_quote {
             timeout-ms = <50>;
             key-positions = <7 8>;
-             bindings = <&kp SQT>;
+            bindings = <&kp SQT>;
         };
-        combo_bslsh {
-            timeout-ms = <50>;
-            key-positions = <7 8 9>;
-            bindings = <&kp BACKSLASH>;
-        };
-        combo_del {
+        combo_lclk {
             timeout-ms = <50>;
             key-positions = <15 16>;
-            bindings = <&kp DEL>;
+            bindings = <&mkp LCLK>;
         };
         combo_rclk {
             timeout-ms = <50>;
-            key-positions = <2 3>;
+            key-positions = <14 15>;
             bindings = <&mkp RCLK>;
+        };
+        combo_del {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&kp DEL>;
         };
     };
 };
