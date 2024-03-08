@@ -24,6 +24,15 @@
               ╰────────────┴────────────╯                         ╰─────────────┴─────────────╯             */
 
 / {
+     behaviors {
+        nbspc: n_bspc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N>, <&kp BSPC>;
+            mods = <(MOD_LCTL)>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
         combo_esc {
@@ -77,14 +86,6 @@
             bindings = <&mkp RCLK>;
         };
     };
-    behaviors {
-        nback: n_backspace {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N>, <&kp BSPC>;
-            mods = <(MOD_LCTL)>;
-        };
-    };
 };
 
 / {
@@ -94,7 +95,7 @@
 
                         bindings = <
    &kp SPACE  &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y               &kp SEMI     &kp LC(S)
-   &kp F14    &kp A &kp R &kp S &kp T &kp G   &kp M &kp nback  &kp E     &lt NAVLAYER I      &kp O        &kp SQT
+   &kp F14    &kp A &kp R &kp S &kp T &kp G   &kp M &nbspc  &kp E     &lt NAVLAYER I      &kp O        &kp SQT
    &kp F15    &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT             &kp FSLH     &kp ESC
 
                   &kp LCTRL &mkp RCLK &lt NUMLAYER SPACE   &sk RSHIFT &kp RCTRL &kp RALT
