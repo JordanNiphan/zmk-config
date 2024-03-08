@@ -81,7 +81,7 @@
         nback: n_backspace {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp n>, <&kp BSPC>;
+            bindings = <&kp N>, <&kp BSPC>;
             mods = <(MOD_LCTL)>;
         };
     };
