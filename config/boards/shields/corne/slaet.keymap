@@ -77,7 +77,7 @@
             bindings = <&mkp RCLK >;
         };
     };
-     behaviors {
+    behaviors {
         nback: n_backspace {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <19>;
