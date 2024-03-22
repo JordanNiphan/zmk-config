@@ -75,6 +75,11 @@
             key-positions = <27 28>;
             bindings = <&kp DEL>;
         };
+        combo_qwerty {
+            timeout-ms = <50>;
+            key-positions = <9 10 11>;
+            bindings = <&kp DEL>;
+        };
     };
 };
 
@@ -128,9 +133,9 @@
                 QWERTY {
 
                         bindings = <
-   &kp F13  &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O               &kp P     &kp LC(S)
-   &kp F14  &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &lt NAVLAYER L      &kp SEMI        &kp SQT
-   &kp F15  &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT             &kp FSLH     &kp ESC
+   &kp N1      &kp Q &kp W &kp E  &kp R &kp T    &kp Y &kp U  &kp I     &kp O               &kp P     &kp LC(S)
+   &kp LSHIFT  &kp A &kp S &kp D  &kp F &kp G    &kp H &kp J  &kp K     &lt NAVLAYER L      &kp SEMI        &kp SQT
+   &kp LCTRL   &kp Z &kp X &kp C  &kp V &kp B    &kp N &kp M  &kp COMMA &kp DOT             &kp FSLH     &kp ESC
 
                   &kp LCTRL &mkp RCLK &lt NUMLAYER SPACE   &sk RSHIFT &kp RCTRL &kp RALT
                   
