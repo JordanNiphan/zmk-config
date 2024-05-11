@@ -11,7 +11,6 @@
 #   - board: nice_nano_v2
 #     shield: reviung41k
 #
----
 include:
   - board: nice_nano_v2
     shield: slaet_right
