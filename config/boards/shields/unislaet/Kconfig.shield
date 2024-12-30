@@ -1,2 +1,3 @@
 config SHIELD_UNISLAET
     def_bool $(shields_list_contains,unislaet)
+    
