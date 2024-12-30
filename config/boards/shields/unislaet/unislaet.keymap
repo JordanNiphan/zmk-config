@@ -44,6 +44,7 @@
         combo_ent {
             timeout-ms = <50>;
             key-positions = <26 27>;
+
             bindings = <&kp RET>;
         };
         combo_bspc {
@@ -54,6 +55,7 @@
         combo_tab {
             timeout-ms = <50>;
             key-positions = <2 3>;  
+
             bindings = <&kp TAB>;
         };
         combo_quote {
