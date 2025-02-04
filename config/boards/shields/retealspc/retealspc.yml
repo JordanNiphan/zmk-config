@@ -1,0 +1,11 @@
+file_format: "1"
+id: retealspc
+name: RetealsPC
+type: shield
+url:  
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - retealspc_left
+  - retealspc_right

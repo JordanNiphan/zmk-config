@@ -1,0 +1,5 @@
+config SHIELD_RETEALSPC_LEFT
+    def_bool $(shields_list_contains,retealspc_left)
+
+config SHIELD_RETEALSPC_RIGHT
+    def_bool $(shields_list_contains,retealspc_right)

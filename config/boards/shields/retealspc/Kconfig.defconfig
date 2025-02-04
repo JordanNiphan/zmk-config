@@ -1,0 +1,16 @@
+if SHIELD_RETEALSPC_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "RETEALSPC"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_RETEALSPC_LEFT || SHIELD_RETEALSPC_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
