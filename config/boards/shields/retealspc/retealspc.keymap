@@ -8,6 +8,7 @@
 
 #include <dt-bindings/zmk/pointing.h>
 
+
 #define DEFAULT         0
 #define NUMLAYER        1
 #define NAVLAYER        2
