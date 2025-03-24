@@ -1,9 +1,9 @@
 include:
   - board: nice_nano_v2
-    shield: reteals_left
+    shield: corne_left
     snippet: zmk-usb-logging
   - board: nice_nano_v2
-    shield: reteals_right
+    shield: corne_right
     snippet: zmk-usb-logging
   - board: nice_nano_v2
     shield: settings_reset
