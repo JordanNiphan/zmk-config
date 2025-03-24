@@ -1,7 +1,7 @@
 include:
   - board: nice_nano_v2
-    shield: retealspc_left
+    shield: reteals_left
   - board: nice_nano_v2
-    shield: retealspc_right
+    shield: reteals_right
   - board: nice_nano_v2
     shield: settings_reset
