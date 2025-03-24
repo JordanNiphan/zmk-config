@@ -3,9 +3,21 @@ if SHIELD_RETEALS_LEFT
 config ZMK_KEYBOARD_NAME
     default "RETEALS"
 
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
 endif
 
-if SHIELD_RETEALS_LEFT || SHIELD_RETEALS_RIGHT
+if SHIELD_RETEALS_LEFT 
+config CONFIG_ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SPLIT
+    default y
+
+if SHIELD_RETEALS_RIGHT
+config CONFIG_ZMK_SPLIT_ROLE_CENTRAL
+    default n
 
 config ZMK_SPLIT
     default y
