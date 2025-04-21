@@ -145,7 +145,7 @@
                 MOUSE { 
 
                         bindings = <
-                            &trans  &msc SCRL_DOWN      &mmv MOVE_UP    &msc SCRL_UP        &trans                  &trans      &to default_layer   &trans  &trans  &trans 
+                            &trans  &msc SCRL_DOWN      &mmv MOVE_UP    &msc SCRL_UP        &trans                  &trans      &to DEFAULT   &trans  &trans  &trans 
                             &trans  &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT     &trans                  &trans      &trans              &trans  &trans  &trans 
                             &trans  &trans              &trans          &trans              &trans                  &trans      &trans              &trans  &trans  &trans 
                                                         &trans          &trans              &trans                  &mkp LCLK   &mkp RCLK           &trans                  
@@ -158,7 +158,7 @@
                             &kp F1  &kp F2  &kp F3  &kp F4  &trans                  &trans  &trans  &trans  &trans  &trans 
                             &kp F6  &kp F7  &kp F8  &kp F9  &kp F10                 &trans  &trans  &trans  &trans  &trans 
                             &kp F11 &kp F12 &kp F13 &kp F14 &kp F15                 &trans  &trans  &trans  &trans  &trans 
-                                            &trans      &trans    &trans        &trans &trans &trans                  
+                                            &trans      &trans    &bootloader         &bootloader  &trans &trans                  
                         >;
                 };
 
