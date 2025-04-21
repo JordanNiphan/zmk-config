@@ -1,0 +1,5 @@
+config SHIELD_CABANATKL_LEFT
+    def_bool $(shields_list_contains,cabanatkl_left)
+
+config SHIELD_CABANATKL_RIGHT
+    def_bool $(shields_list_contains,cabanatkl_right)
