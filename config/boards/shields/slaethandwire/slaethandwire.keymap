@@ -24,14 +24,6 @@
           ╰─────────────┴────────────╯            */
 
 / {
-     behaviors {
-        TD_U_Mouse: tap_dance_u_mouse {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <100>;
-            bindings = <&kp U>, <&to MOUSE>;
-        };
-    };
     
     combos {
         compatible = "zmk,combos";
@@ -115,9 +107,9 @@
                 default_layer {
 
                         bindings = <
-                            &kp Q   &kp W   &kp F       &kp P       &lt FUNCTION B                      &kp J       &kp L       &TD_U_Mouse &kp Y               &kp SEMI     
+                            &kp Q   &kp W   &kp F       &kp P       &lt FUNCTION B                      &kp J       &kp L       &kp U       &kp Y               &kp SEMI     
                             &kp A   &kp R   &kp S       &kp T       &kp G                               &kp M       &kp N       &kp E       &lt NAVLAYER I      &kp O        
-                            &kp Z   &kp X   &kp C       &kp D       &kp V                               &kp K       &kp H       &kp COMMA   &kp DOT             &kp FSLH     
+                            &kp Z   &kp X   &kp C       &kp D       &kp V                               &kp K       &kp H       &kp COMMA   &lt MOUSE DOT       &kp FSLH     
                                             &kp RSHIFT    &kp LCTRL   &lt NUMLAYER SPACE          &sk RSHIFT  &kp RCTRL   &kp RALT 
                   
                         >;
@@ -145,7 +137,7 @@
                 MOUSE { 
 
                         bindings = <
-                            &trans  &msc SCRL_DOWN      &mmv MOVE_UP    &msc SCRL_UP        &trans                                                                                                              &trans      &to 0               &trans  &trans  &trans 
+                            &trans  &msc SCRL_DOWN      &mmv MOVE_UP    &msc SCRL_UP        &trans                  &trans      &trans              &trans  &trans  &trans 
                             &trans  &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT     &trans                  &trans      &trans              &trans  &trans  &trans 
                             &trans  &trans              &trans          &trans              &trans                  &trans      &trans              &trans  &trans  &trans 
                                                         &trans          &trans              &trans                  &mkp LCLK   &mkp RCLK           &trans                  
