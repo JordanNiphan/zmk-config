@@ -1,0 +1,205 @@
+// --- Constants ---
+U = 19.05; // Standard key unit size in mm
+key_top_size = 18; // Visual size of the keycap top (slightly smaller than U for gap)
+key_gap = U - key_top_size; // Gap between keycap edges
+key_height = 5; // Height of the keycaps
+plate_thickness = 3; // Thickness of the base plate
+split_gap = 10; // Gap between the left and right halves in mm
+hole_size = 14; // Size of the square hole in mm
+key_base_gap = 2; // <<<< NEW: Vertical gap between baseplate and keycaps in mm
+
+// Key Widths (in U) - Used for calculating positions
+key_width_tab = 1.5;
+key_width_caps = 1.75;
+key_width_lshift = 2.25;
+key_width_lctrl = 1.25;
+key_width_lwin = 1.25;
+key_width_lalt = 1.25;
+key_width_space_l = 3;
+key_width_space_r = 3.25; // Total 6.25
+key_width_backslash = 1.5;
+key_width_enter = 2.25;
+key_width_rshift = 2.75;
+key_width_ralt = 1.25;
+key_width_fn = 1.25;
+key_width_menu = 1.25;
+key_width_rctrl = 1.25;
+key_width_backspace = 2;
+key_width_standard = 1; // Standard 1U key width
+
+// Stagger offsets (relative horizontal shift for the start of the row)
+stagger_row5 = 0 * U;     // Number row (base)
+stagger_row4 = 0 * U;     // QWERTY row (relative to Esc/1 column)
+stagger_row3 = 0.25 * U;  // ASDF row
+stagger_row2 = 0.75 * U;  // ZXCV row
+stagger_row1 = 0.75 * U;  // Bottom Mod row
+
+// --- Helper Module ---
+
+// Module to create a single rectangular keycap WITH a centered hole
+// place_pos = bottom-left corner position [x, y] (absolute within its half)
+// size_u = size in U units [width, depth] (depth is usually 1)
+module keycap(place_pos, size_u=[1,1]) {
+    key_w = size_u[0] * U - key_gap;
+    key_d = size_u[1] * U - key_gap;
+    hole_height_tolerance = 2 + key_base_gap; // << Adjusted hole height for gap
+    hole_z_offset = -1 - key_base_gap;       // << Adjusted hole start for gap
+
+    // Calculate hole position relative to the keycap's origin (0,0) before translation
+    hole_rel_x = (key_w - hole_size) / 2;
+    hole_rel_y = (key_d - hole_size) / 2;
+
+    // Translate the entire differenced object to the final position
+    // The keycap base's bottom-left corner is placed at place_pos + offset
+    // ADD key_base_gap to the Z translation
+    translate(place_pos + [key_gap/2, key_gap/2, plate_thickness + key_base_gap]) { // <<<< MODIFIED Z
+        difference() {
+            // Keycap Body (origin at its bottom-left-front corner)
+            cube([key_w, key_d, key_height]);
+
+            // Hole (positioned relative to keycap origin and slightly below/above)
+            translate([hole_rel_x, hole_rel_y, hole_z_offset]) {
+                cube([hole_size, hole_size, key_height + hole_height_tolerance]);
+            }
+        }
+    }
+}
+
+// --- Keys Modules (Fully Absolute Positioning, No Sequential x_pos Update) ---
+
+module left_keys() {
+    x_offset_global = -split_gap / 2; // Shift left half to the left
+
+    // Row 5: Esc, 1, 2, 3, 4, 5
+    y_row5 = 4 * U;
+    x_start_r5 = stagger_row5;
+    keycap([x_offset_global + x_start_r5 + 0*key_width_standard*U, y_row5], [key_width_standard, 1]); // Esc (Pos 0)
+    keycap([x_offset_global + x_start_r5 + 1*key_width_standard*U, y_row5], [key_width_standard, 1]); // 1   (Pos 1)
+    keycap([x_offset_global + x_start_r5 + 2*key_width_standard*U, y_row5], [key_width_standard, 1]); // 2   (Pos 2)
+    keycap([x_offset_global + x_start_r5 + 3*key_width_standard*U, y_row5], [key_width_standard, 1]); // 3   (Pos 3)
+    keycap([x_offset_global + x_start_r5 + 4*key_width_standard*U, y_row5], [key_width_standard, 1]); // 4   (Pos 4)
+    keycap([x_offset_global + x_start_r5 + 5*key_width_standard*U, y_row5], [key_width_standard, 1]); // 5   (Pos 5)
+
+    // Row 4: Tab, Q, W, E, R, T
+    y_row4 = 3 * U;
+    x_start_r4 = stagger_row4;
+    keycap([x_offset_global + x_start_r4,                                                   y_row4], [key_width_tab, 1]);      // Tab (Pos 0)
+    keycap([x_offset_global + x_start_r4 + key_width_tab*U,                                 y_row4], [key_width_standard, 1]); // Q   (Pos Tab)
+    keycap([x_offset_global + x_start_r4 + (key_width_tab + 1*key_width_standard)*U,       y_row4], [key_width_standard, 1]); // W   (Pos Tab+Q)
+    keycap([x_offset_global + x_start_r4 + (key_width_tab + 2*key_width_standard)*U,       y_row4], [key_width_standard, 1]); // E   (Pos Tab+Q+W)
+    keycap([x_offset_global + x_start_r4 + (key_width_tab + 3*key_width_standard)*U,       y_row4], [key_width_standard, 1]); // R   (Pos Tab+Q+W+E)
+    keycap([x_offset_global + x_start_r4 + (key_width_tab + 4*key_width_standard)*U,       y_row4], [key_width_standard, 1]); // T   (Pos Tab+Q+W+E+R)
+
+    // Row 3: Caps, A, S, D, F, G
+    y_row3 = 2 * U;
+    x_start_r3 = stagger_row3;
+    keycap([x_offset_global + x_start_r3,                                                   y_row3], [key_width_caps, 1]);     // Caps(Pos 0)
+    keycap([x_offset_global + x_start_r3 + key_width_caps*U,                                y_row3], [key_width_standard, 1]); // A   (Pos Caps)
+    keycap([x_offset_global + x_start_r3 + (key_width_caps + 1*key_width_standard)*U,      y_row3], [key_width_standard, 1]); // S   (Pos Caps+A)
+    keycap([x_offset_global + x_start_r3 + (key_width_caps + 2*key_width_standard)*U,      y_row3], [key_width_standard, 1]); // D   (Pos Caps+A+S)
+    keycap([x_offset_global + x_start_r3 + (key_width_caps + 3*key_width_standard)*U,      y_row3], [key_width_standard, 1]); // F   (Pos Caps+A+S+D)
+    keycap([x_offset_global + x_start_r3 + (key_width_caps + 4*key_width_standard)*U,      y_row3], [key_width_standard, 1]); // G   (Pos Caps+A+S+D+F)
+
+    // Row 2: LShift, Z, X, C, V, B
+    y_row2 = 1 * U;
+    x_start_r2 = stagger_row2;
+    keycap([x_offset_global + x_start_r2,                                                   y_row2], [key_width_lshift, 1]);   // LShift(Pos 0)
+    keycap([x_offset_global + x_start_r2 + key_width_lshift*U,                              y_row2], [key_width_standard, 1]); // Z     (Pos LShift)
+    keycap([x_offset_global + x_start_r2 + (key_width_lshift + 1*key_width_standard)*U,    y_row2], [key_width_standard, 1]); // X     (Pos LShift+Z)
+    keycap([x_offset_global + x_start_r2 + (key_width_lshift + 2*key_width_standard)*U,    y_row2], [key_width_standard, 1]); // C     (Pos LShift+Z+X)
+    keycap([x_offset_global + x_start_r2 + (key_width_lshift + 3*key_width_standard)*U,    y_row2], [key_width_standard, 1]); // V     (Pos LShift+Z+X+C)
+    keycap([x_offset_global + x_start_r2 + (key_width_lshift + 4*key_width_standard)*U,    y_row2], [key_width_standard, 1]); // B     (Pos LShift+Z+X+C+V)
+
+    // Row 1: LCtrl, LWin, LAlt, Space_L
+    y_row1 = 0 * U;
+    x_start_r1 = stagger_row1;
+    keycap([x_offset_global + x_start_r1,                                                 y_row1], [key_width_lctrl, 1]);    // LCtrl (Pos 0)
+    keycap([x_offset_global + x_start_r1 + key_width_lctrl*U,                             y_row1], [key_width_lwin, 1]);     // LWin  (Pos LCtrl)
+    keycap([x_offset_global + x_start_r1 + (key_width_lctrl + key_width_lwin)*U,          y_row1], [key_width_lalt, 1]);     // LAlt  (Pos LCtrl+LWin)
+    keycap([x_offset_global + x_start_r1 + (key_width_lctrl + key_width_lwin + key_width_lalt)*U, y_row1], [key_width_space_l, 1]); // SpaceL(Pos LCtrl+LWin+LAlt)
+}
+
+module right_keys() {
+    x_offset_global = split_gap / 2; // Shift right half to the right
+
+    // Row 5: 6, 7, 8, 9, 0, -, =, Backspace
+    y_row5 = 4 * U;
+    x_start_r5_right = stagger_row5 + 6 * key_width_standard * U; // Start at column 6 equivalent position
+    keycap([x_offset_global + x_start_r5_right + 0*key_width_standard*U,                  y_row5], [key_width_standard, 1]); // 6         (Pos 0 relative to start)
+    keycap([x_offset_global + x_start_r5_right + 1*key_width_standard*U,                  y_row5], [key_width_standard, 1]); // 7         (Pos 1)
+    keycap([x_offset_global + x_start_r5_right + 2*key_width_standard*U,                  y_row5], [key_width_standard, 1]); // 8         (Pos 2)
+    keycap([x_offset_global + x_start_r5_right + 3*key_width_standard*U,                  y_row5], [key_width_standard, 1]); // 9         (Pos 3)
+    keycap([x_offset_global + x_start_r5_right + 4*key_width_standard*U,                  y_row5], [key_width_standard, 1]); // 0         (Pos 4)
+    keycap([x_offset_global + x_start_r5_right + 5*key_width_standard*U,                  y_row5], [key_width_standard, 1]); // -         (Pos 5)
+    keycap([x_offset_global + x_start_r5_right + 6*key_width_standard*U,                  y_row5], [key_width_standard, 1]); // =         (Pos 6)
+    keycap([x_offset_global + x_start_r5_right + 7*key_width_standard*U,                  y_row5], [key_width_backspace, 1]);// Backspace (Pos 7)
+
+    // Row 4: Y, U, I, O, P, [, ], \
+    y_row4 = 3 * U;
+    x_start_r4_right = stagger_row4 + (key_width_tab + 5 * key_width_standard) * U;
+    keycap([x_offset_global + x_start_r4_right,                                           y_row4], [key_width_standard, 1]); // Y   (Pos 0 relative to start)
+    keycap([x_offset_global + x_start_r4_right + 1*key_width_standard*U,                  y_row4], [key_width_standard, 1]); // U   (Pos 1)
+    keycap([x_offset_global + x_start_r4_right + 2*key_width_standard*U,                  y_row4], [key_width_standard, 1]); // I   (Pos 2)
+    keycap([x_offset_global + x_start_r4_right + 3*key_width_standard*U,                  y_row4], [key_width_standard, 1]); // O   (Pos 3)
+    keycap([x_offset_global + x_start_r4_right + 4*key_width_standard*U,                  y_row4], [key_width_standard, 1]); // P   (Pos 4)
+    keycap([x_offset_global + x_start_r4_right + 5*key_width_standard*U,                  y_row4], [key_width_standard, 1]); // [   (Pos 5)
+    keycap([x_offset_global + x_start_r4_right + 6*key_width_standard*U,                  y_row4], [key_width_standard, 1]); // ]   (Pos 6)
+    keycap([x_offset_global + x_start_r4_right + 7*key_width_standard*U,                  y_row4], [key_width_backslash, 1]);// \   (Pos 7)
+
+    // Row 3: H, J, K, L, ;, ', Enter
+    y_row3 = 2 * U;
+    x_start_r3_right = stagger_row3 + (key_width_caps + 5 * key_width_standard) * U;
+    keycap([x_offset_global + x_start_r3_right,                                           y_row3], [key_width_standard, 1]); // H    (Pos 0 relative to start)
+    keycap([x_offset_global + x_start_r3_right + 1*key_width_standard*U,                  y_row3], [key_width_standard, 1]); // J    (Pos 1)
+    keycap([x_offset_global + x_start_r3_right + 2*key_width_standard*U,                  y_row3], [key_width_standard, 1]); // K    (Pos 2)
+    keycap([x_offset_global + x_start_r3_right + 3*key_width_standard*U,                  y_row3], [key_width_standard, 1]); // L    (Pos 3)
+    keycap([x_offset_global + x_start_r3_right + 4*key_width_standard*U,                  y_row3], [key_width_standard, 1]); // ;    (Pos 4)
+    keycap([x_offset_global + x_start_r3_right + 5*key_width_standard*U,                  y_row3], [key_width_standard, 1]); // '    (Pos 5)
+    keycap([x_offset_global + x_start_r3_right + 6*key_width_standard*U,                  y_row3], [key_width_enter, 1]);    // Enter(Pos 6)
+
+    // Row 2: N, M, ,, ., /, RShift
+    y_row2 = 1 * U;
+    x_start_r2_right = stagger_row2 + (key_width_lshift + 5 * key_width_standard) * U;
+    keycap([x_offset_global + x_start_r2_right,                                           y_row2], [key_width_standard, 1]); // N     (Pos 0 relative to start)
+    keycap([x_offset_global + x_start_r2_right + 1*key_width_standard*U,                  y_row2], [key_width_standard, 1]); // M     (Pos 1)
+    keycap([x_offset_global + x_start_r2_right + 2*key_width_standard*U,                  y_row2], [key_width_standard, 1]); // ,     (Pos 2)
+    keycap([x_offset_global + x_start_r2_right + 3*key_width_standard*U,                  y_row2], [key_width_standard, 1]); // .     (Pos 3)
+    keycap([x_offset_global + x_start_r2_right + 4*key_width_standard*U,                  y_row2], [key_width_standard, 1]); // /     (Pos 4)
+    keycap([x_offset_global + x_start_r2_right + 5*key_width_standard*U,                  y_row2], [key_width_rshift, 1]);   // RShift(Pos 5)
+
+    // Row 1: Space_R, RAlt, Fn, Menu, RCtrl
+    y_row1 = 0 * U;
+    x_start_r1_right = stagger_row1 + (key_width_lctrl + key_width_lwin + key_width_lalt + key_width_space_l) * U;
+    keycap([x_offset_global + x_start_r1_right,                                                     y_row1], [key_width_space_r, 1]); // Space R (Pos 0 relative to start)
+    keycap([x_offset_global + x_start_r1_right + key_width_space_r*U,                               y_row1], [key_width_ralt, 1]);   // RAlt    (Pos SpaceR)
+    keycap([x_offset_global + x_start_r1_right + (key_width_space_r + key_width_ralt)*U,            y_row1], [key_width_fn, 1]);     // Fn      (Pos SpaceR+RAlt)
+    keycap([x_offset_global + x_start_r1_right + (key_width_space_r + key_width_ralt + key_width_fn)*U, y_row1], [key_width_menu, 1]);   // Menu    (Pos SpaceR+RAlt+Fn)
+    keycap([x_offset_global + x_start_r1_right + (key_width_space_r + key_width_ralt + key_width_fn + key_width_menu)*U, y_row1], [key_width_rctrl, 1]);  // RCtrl   (Pos SpaceR+RAlt+Fn+Menu)
+}
+
+// --- Baseplate Module ---
+module baseplate(width_u, height_u, offset_x=0) {
+    plate_w = width_u * U;
+    plate_d = height_u * U;
+    padding = U * 0.5;
+    base_x = offset_x - padding; // Adjust base_x for padding
+    base_y = -padding; // Start plate slightly below lowest key row (y=0)
+
+    translate([base_x, base_y, 0])
+        cube([plate_w + 2*padding, plate_d + 2*padding, plate_thickness]);
+}
+
+// --- Main Body: Generate Keyboard ---
+
+// Define baseplate parameters
+left_total_width_u = key_width_lshift + 5*key_width_standard; // Row 2 is widest on left ~7.25U
+right_plate_width_u_calc = 10; // Approx width needed for right half keys
+plate_height_u = 5; // 5 rows high
+
+// Generate Keys
+left_keys();
+right_keys();
+
+// Generate Baseplates
+baseplate(left_total_width_u + 0.5, plate_height_u, offset_x = -split_gap/2 - 0.25*U ); // Left Plate
+baseplate(right_plate_width_u_calc + 0.5, plate_height_u, offset_x = split_gap/2 + 6*U ); // Right Plate
