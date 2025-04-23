@@ -64,6 +64,11 @@
             key-positions = <11 12>;
             bindings = <&mkp MB2>;
         };
+        combo_mclk {
+            timeout-ms = <50>;
+            key-positions = <11 12 13>;
+            bindings = <&mkp MB3>;
+        };
         combo_del {
             timeout-ms = <50>;
             key-positions = <22 23>;
@@ -98,6 +103,11 @@
             timeout-ms = <50>;
             key-positions = <21 22>;
             bindings = <&kp LGUI>;
+        };           
+            combo_right_mouse_toggle {
+            timeout-ms = <50>;
+            key-positions = <5 6 7>;
+            bindings = <&tog MOUSE>;
         };
 
     };
