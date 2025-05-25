@@ -1,4 +1,4 @@
-#include "slaethandwire.dtsi"
+#include "tklhandwire.dtsi"
 
 &kscan0 {
     col-gpios
