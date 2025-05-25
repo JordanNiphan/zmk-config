@@ -1,0 +1,5 @@
+config SHIELD_TKLHANDWIRE_LEFT
+    def_bool $(shields_list_contains,tklhandwire_left)
+
+config SHIELD_TKLHANDWIRE_RIGHT
+    def_bool $(shields_list_contains,tklhandwire_right)

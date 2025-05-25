@@ -1,0 +1,11 @@
+file_format: "1"
+id: tklhandwire
+name: tklhandwire
+type: shield
+url:  
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - tklhandwire_left
+  - tklhandwire_right
