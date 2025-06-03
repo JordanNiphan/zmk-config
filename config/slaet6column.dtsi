@@ -53,7 +53,7 @@
     };
 };
 
-&layouts_slaet_map {
+&layouts_slaet_position_map {
     slaet_6col_posmap: six {
         physical-layout = <&slaet_6col_layout>;
         positions
