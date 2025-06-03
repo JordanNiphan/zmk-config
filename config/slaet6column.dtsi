@@ -1,4 +1,4 @@
-#include <slaet_map.dtsi>
+#include </__w/zmk-config/zmk-config/config/slaet_map.dtsi>
 #include <physical_layouts.dtsi>
 
 / {
