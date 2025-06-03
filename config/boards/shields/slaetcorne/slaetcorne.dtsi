@@ -1,6 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
-#include </__w/zmk-config/zmk-config/config/boards/shields/slaetcorne/slaet6column.dtsi>
+#include <slaet6column.dtsi>
 
 &slaet_6col_layout {
     transform = <&default_transform>;
