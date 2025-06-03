@@ -1,0 +1,14 @@
+file_format: "1"
+id: slaetcorne
+name: SlaetCorne
+type: shield
+url: https://github.com/JordanNiphan/zmk
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+
+siblings:
+  - slaetcorne_left
+  - slaetcorne_right
