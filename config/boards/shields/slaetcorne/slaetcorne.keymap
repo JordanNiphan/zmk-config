@@ -157,7 +157,7 @@
                                 &trans		&kp C		&kp Q		&kp W		&kp E			&kp T					&kp V		&trans		&trans		&trans		&trans		&trans 
                                 &trans		&trans		&kp A		&kp S		&kp D			&kp F					&trans		&trans		&trans		&trans		&trans		&trans
                                 &trans		&kp Z		&trans		&kp X		&kp 			&kp M					&trans		&trans		&trans		&trans		&trans		&trans
-									                                &kp T		&kp LSHIFT		&kp Space			&trans		&trans		&trans
+									                                &kp T		&kp LSHIFT		&kp SPACE	   &trans		&trans		&trans
                         >;
                 
 
