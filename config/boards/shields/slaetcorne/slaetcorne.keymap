@@ -12,7 +12,7 @@
 #define NUMLAYER     1
 #define NAVLAYER     2
 #define MOUSE        3
-#define RECROOM         4
+#define RECROOM      4
 
 /*
   ╭─────────────────────────┬─────────────────────────╮ 
@@ -96,8 +96,13 @@
         };
             combo_btclr {
             timeout-ms = <50>;
-            key-positions = <0 12 14>;
+            key-positions = <0 12 24>;
             bindings = <&bt BT_CLR_ALL>;
+        };
+            combo_recroom {
+            timeout-ms = <50>;
+            key-positions = <33 34 35>;
+            bindings = <&tog RECROOM;
         };
 
     };
