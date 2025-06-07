@@ -1,3 +1,4 @@
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
@@ -152,13 +153,14 @@
                 };
 
                 GAME {
+
                         bindings = <
                                 &trans		&kp C		&kp Q		&kp W		&kp E			&kp T					&kp V		&trans		&trans		&trans		&trans		&trans 
                                 &trans		&trans		&kp A		&kp S		&kp D			&kp F					&trans		&trans		&trans		&trans		&trans		&trans
                                 &trans		&kp Z		&trans		&kp X		&kp 			&kp M					&trans		&trans		&trans		&trans		&trans		&trans
-									                                &kp T		&kp LSHIFT		&kp SPACE	   &trans		&trans		&trans
+									                                &kp T		&kp LSHIFT		&kp SPACE			&trans		&trans		&trans              
                         >;
-                
+                };
 
         };
 };
