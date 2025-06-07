@@ -12,7 +12,7 @@
 #define NUMLAYER     1
 #define NAVLAYER     2
 #define MOUSE        3
-#define GAME         5
+#define GAME         4
 
 /*
   ╭─────────────────────────┬─────────────────────────╮ 
