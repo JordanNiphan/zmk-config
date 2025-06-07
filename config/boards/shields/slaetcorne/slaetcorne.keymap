@@ -102,7 +102,7 @@
             combo_recroom {
             timeout-ms = <50>;
             key-positions = <33 34 35>;
-            bindings = <&tog RECROOM;
+            bindings = <&tog RECROOM>;
         };
 
     };
