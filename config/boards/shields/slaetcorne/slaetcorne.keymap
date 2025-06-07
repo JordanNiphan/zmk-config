@@ -12,7 +12,7 @@
 #define NUMLAYER     1
 #define NAVLAYER     2
 #define MOUSE        3
-#define BOOT         5
+#define RECROOM         4
 
 /*
   ╭─────────────────────────┬─────────────────────────╮ 
@@ -146,13 +146,13 @@
                         >;
                 };
 
-                BOOT {
+                RECROOM {
 
                         bindings = <
-                             &trans     &bootloader     &bootloader     &bootloader     &bootloader     &bootloader             &bootloader     &bootloader     &bootloader     &bootloader     &bootloader   &trans 
-                             &trans     &kp K_SLEEP     &kp K_SLEEP     &kp K_SLEEP     &kp K_SLEEP     &kp K_SLEEP             &kp K_SLEEP     &kp K_SLEEP     &kp K_SLEEP     &kp K_SLEEP     &kp K_SLEEP   &trans
-                             &trans     &soft_off       &soft_off       &soft_off       &soft_off       &soft_off               &soft_off       &soft_off       &soft_off       &soft_off       &soft_off     &trans
-                                                            &trans          &trans          &trans                  &trans          &trans          &trans                  
+                             &kp NUMBER_1    &kp C           &kp Q           &kp W           &kp E           &kp T                   &bootloader     &bootloader     &bootloader     &bootloader     &bootloader   &trans 
+                             &kp NUMBER_2     &trans          &kp A           &kp S           &kp D           &kp F           &kp K_SLEEP     &kp K_SLEEP     &kp K_SLEEP     &kp K_SLEEP     &kp K_SLEEP   &trans
+                             &kp NUMBER_3     &kp Z           &trans          &kp X           &trans			&kp M           &soft_off       &soft_off       &soft_off       &soft_off       &soft_off     &trans
+                                                            &kp V      &kp LSHIFT         &kp SPACE                   &trans          &trans          &trans                  
                         >;
                 };
 
