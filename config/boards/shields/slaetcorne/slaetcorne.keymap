@@ -12,7 +12,7 @@
 #define NUMLAYER     1
 #define NAVLAYER     2
 #define MOUSE        3
-#define BOOT         5
+#define GAME         5
 
 /*
   ╭─────────────────────────┬─────────────────────────╮ 
@@ -99,6 +99,12 @@
             key-positions = <0 12 14>;
             bindings = <&bt BT_CLR_ALL>;
         };
+            combo_lswgame {
+            timeout-ms = <50>;
+            key-positions = <33 34 35>;
+            bindings = <&tog GAME>;
+        };
+
 
     };
 };
@@ -146,13 +152,13 @@
                         >;
                 };
 
-                BOOT {
+                GAME {
 
                         bindings = <
-                             &trans     &bootloader     &bootloader     &bootloader     &bootloader     &bootloader             &bootloader     &bootloader     &bootloader     &bootloader     &bootloader   &trans 
-                             &trans     &kp K_SLEEP     &kp K_SLEEP     &kp K_SLEEP     &kp K_SLEEP     &kp K_SLEEP             &kp K_SLEEP     &kp K_SLEEP     &kp K_SLEEP     &kp K_SLEEP     &kp K_SLEEP   &trans
-                             &trans     &soft_off       &soft_off       &soft_off       &soft_off       &soft_off               &soft_off       &soft_off       &soft_off       &soft_off       &soft_off     &trans
-                                                            &trans          &trans          &trans                  &trans          &trans          &trans                  
+                                &trans		&kp C		&kp Q		&kp W		&kp E			&kp T					&kp V		&trans		&trans		&trans		&trans		&trans 
+                                &trans		&trans		&kp A		&kp S		&kp D			&kp F					&trans		&trans		&trans		&trans		&trans		&trans
+                                &trans		&kp Z		&trans		&kp X		&kp 			&kp M					&trans		&trans		&trans		&trans		&trans		&trans
+									                                &kp T		&kp LSHIFT		&kp Space			&trans		&trans		&trans              
                         >;
                 };
 
