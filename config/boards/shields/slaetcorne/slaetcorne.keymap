@@ -114,9 +114,9 @@
                 default_layer {
 
                         bindings = <
-                                &kp U    &kp Q   &kp W   &kp F       &kp P       &kp B                       &kp J       &kp L       &kp U       &kp Y               &kp SEMI   &kp U     
-                                &kp U    &kp A   &kp R   &kp S       &kp T       &kp G                       &kp M       &kp N       &kp E       &lt NAVLAYER I      &kp O      &kp U       
-                                &kp U    &kp Z   &kp X   &kp C       &kp D       &kp V                       &kp K       &kp H       &kp COMMA   &lt MOUSE DOT       &kp FSLH   &kp U   
+                                &kp F14    &kp Q   &kp W   &kp F       &kp P       &kp B                       &kp J       &kp L       &kp U       &kp Y               &kp SEMI   &kp U     
+                                &kp F15    &kp A   &kp R   &kp S       &kp T       &kp G                       &kp M       &kp N       &kp E       &lt NAVLAYER I      &kp O      &kp U       
+                                &kp F16    &kp Z   &kp X   &kp C       &kp D       &kp V                       &kp K       &kp H       &kp COMMA   &lt MOUSE DOT       &kp FSLH   &kp U   
                                                     &kp LSHIFT    &kp LCTRL   &lt NUMLAYER SPACE          &sk RSHIFT  &kp RCTRL   &kp RALT 
                   
                         >;
