@@ -1,11 +1,11 @@
 file_format: "1"
-id: slaethandwire
-name: Slaethandwire
+id: slaetnodead
+name: slaetnodead
 type: shield
 url:  
 requires: [pro_micro]
 features:
   - keys
 siblings:
-  - slaethandwire_left
-  - slaethandwire_right
+  - slaetnodead_left
+  - slaetnodead_right
