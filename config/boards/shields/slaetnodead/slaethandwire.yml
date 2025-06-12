@@ -1,0 +1,11 @@
+file_format: "1"
+id: slaethandwire
+name: Slaethandwire
+type: shield
+url:  
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - slaethandwire_left
+  - slaethandwire_right

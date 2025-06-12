@@ -1,9 +1,9 @@
 include:
   - board: nice_nano_v2
-    shield: slaetcorne_left
+    shield: slaetnodead_left
 
   - board: nice_nano_v2
-    shield: slaetcorne_right
+    shield: slaetnodead_right
 
   - board: nice_nano_v2
     shield: settings_reset
