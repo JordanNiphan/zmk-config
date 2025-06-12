@@ -90,19 +90,5 @@
             bindings = <&tog MOUSE>;
         };
 
-        oregon: oregon {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp O>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp R &kp E &kp G &kp O &kp N>
-                , <&macro_press &kp LSHFT> 
-                , <&macro_tap &kp C>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp Y &kp B &kp E &kp R &kp N2 &kp N0 &kp AT &kp PRCNT>
-                ;
-        };
     };
 };
