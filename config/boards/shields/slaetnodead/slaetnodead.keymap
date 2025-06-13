@@ -99,7 +99,11 @@
             key-positions = <5 6 7>;
             bindings = <&tog MOUSE>;
         };
-
+            combo_bt_clear {
+            timeout-ms = <50>;
+            key-positions = <0 10 20>;
+            bindings = <&bt BT_CLR_ALL>;
+        };
     };
 
 };
