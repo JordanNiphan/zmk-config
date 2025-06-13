@@ -1,6 +1,6 @@
 #include "slaetnodead.dtsi"
 
-kscan0 {
+&kscan0 {
    compatible = "zmk,kscan-gpio-matrix";
     wakeup-source;
     diode-direction = "col2row";
