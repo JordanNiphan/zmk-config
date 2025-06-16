@@ -1,11 +1,19 @@
 manifest:
   remotes:
     - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: jordanniphan
       url-base: https://github.com/JordanNiphan
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zmk-keyboards-slaetnodead
+      remote: jordanniphan
+      revision: main
+    - name: zmk-rgbled-widget
+      remote: jordanniphan
+      revision: main
   self:
     path: config
