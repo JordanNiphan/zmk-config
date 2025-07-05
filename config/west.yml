@@ -12,8 +12,8 @@ manifest:
     - name: zmk-slaetnodead
       remote: jordanniphan
       revision: main
-    - name: zmk-rgbled-widget
-      remote: jordanniphan
-      revision: main
+#    - name: zmk-rgbled-widget
+#      remote: jordanniphan
+#      revision: main
   self:
     path: config
