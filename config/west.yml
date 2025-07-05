@@ -1,9 +1,11 @@
 manifest:
+
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: jordanniphan
       url-base: https://github.com/JordanNiphan
+      
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -12,5 +14,6 @@ manifest:
     - name: zmk-keyboards
       remote: jordanniphan
       revision: main
+
   self:
     path: config
