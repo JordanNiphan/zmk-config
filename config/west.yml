@@ -9,11 +9,8 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-slaetnodead
+    - name: zmk-keyboards
       remote: jordanniphan
       revision: main
-#    - name: zmk-rgbled-widget
-#      remote: jordanniphan
-#      revision: main
   self:
     path: config
