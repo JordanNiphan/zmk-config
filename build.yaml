@@ -1,10 +1,10 @@
 include:
   - board: nice_nano_v2
-    shield: slaetiny_left ssd1306_128x32
+    shield: slaetiny_left
     snippet: zmk-usb-logging 
     
   - board: nice_nano_v2
-    shield: slaetiny_right ssd1306_128x32
+    shield: slaetiny_right
     snippet: zmk-usb-logging
     
   - board: nice_nano_v2
